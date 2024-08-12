@@ -1,0 +1,151 @@
+body {
+  background-color: rgb(140, 79, 20);
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Tahoma;
+}
+
+.score {
+  font-size: 32px;
+  color: #ffbb11;
+  font-family: arial;
+  position: absolute;
+  bottom: -25px;
+  z-index: 12;
+  transition: 0.3s;
+}
+
+.highScore {
+  text-align: center;
+  line-height: 5px;
+  color: rgb(200, 143, 0);
+  font-family: arial;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 400px;
+}
+
+.tanah {
+  /*border: 1px solid green;*/
+  position: relative;
+  width: 180px;
+  height: 170px;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  margin: 5px 0;
+}
+.tanah::before {
+  /**border: 1px solid white;*/
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 70px;
+  z-index: -1;
+  display: block;
+  background: url(../img/tanahBefore.png) bottom center no-repeat;
+  background-size: 100%;
+  bottom: 0;
+}
+.tanah::after {
+  /*border: 1px solid white;*/
+  content: "";
+  width: 180px;
+  height: 60px;
+  display: block;
+  background: url(../img/tanahAfter.png) bottom center no-repeat;
+  background-size: 100%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+}
+.tikus {
+  /*border: 1px solid blue;*/
+  width: 110px;
+  height: 165px;
+  position: absolute;
+  background: url(../img/tikus.png) bottom center no-repeat;
+  background-size: 100%;
+  bottom: -110px;
+  transition: bottom 0.3s;
+  cursor: pointer;
+}
+
+.tikus.napis {
+  background: url(../img/napis.png) bottom center no-repeat;
+  background-size: 100%;
+}
+
+.tikus.napis:active {
+  background-size: 105%;
+}
+.tikus:active {
+  background-size: 105%;
+}
+
+.tanah.muncul .tikus {
+  bottom: 0;
+}
+
+button {
+  display: block;
+  margin: auto;
+  width: 70px;
+  height: 30px;
+  background-color: green;
+}
+
+.tempatScore {
+  height: 30px;
+  width: 100px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.score.selesai {
+  position: absolute;
+  display: block;
+  z-index: 12;
+  font-size: 200px;
+  bottom: -550px;
+}
+.sec {
+  border-radius: 10px;
+  width: 60px;
+  background-color: green;
+  text-align: center;
+  color: lime;
+  display: none;
+  margin: 10px auto;
+}
+
+.click {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  display: none;
+  z-index: 30;
+}
+.px {
+  image-rendering: pixelated;
+}
+
+#mode {
+  position: absolute;
+  top: 80px;
+  background-color: #e9a100;
+}
